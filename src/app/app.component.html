@@ -1,0 +1,33 @@
+<div class="alert alert-success" role="alert" *ngIf="visible">
+  Trades Executed Successfuly..!
+</div>
+<button type="button" class="btn btn-primary me-2 mt-5 mb-5" (click)="onSave()">Execute Trades</button>
+<button type="button" class="btn btn-primary mt-5 mb-5" (click)="onFetchRequest()">Show Equity Positions</button>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      SecurityCode
+    </div>
+    <div class="col">
+      Quantity
+    </div>
+    <div class="col">
+      Version
+    </div>
+  </div>
+
+  <div class="row" *ngFor="let e of displayEquity">
+    <div class="col">
+      {{e.securityCode}}
+    </div>
+    <div class="col">
+      {{e.quantity}}
+    </div>
+    <div class="col">
+      {{e.version}}
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
